@@ -78,7 +78,7 @@ export default function OpenStocksCanvas() {
   const [investedAmount, setInvestedAmount] = useState(0)
 
   const { state, setState } = useCoAgent({
-    name: "langgraphAgent",
+    name: "agno_agent",
     initialState: {
       available_cash: totalCash,
       investment_summary: {} as any,
@@ -86,9 +86,56 @@ export default function OpenStocksCanvas() {
     }
   })
 
-  useCoAgentStateRender({
-    name: "langgraphAgent",
-    render: ({state}) => <ToolLogs logs={state.tool_logs} />
+  // useCopilotAction({
+  //   name: "*",
+  //   description: "This is a catch all action for the agent. It will be used to render the agent's response.",
+  //   render: (args: any) => {
+  //     return (
+  //       <>
+  //         <div className="flex flex-col gap-4">
+  //           <div className="text-sm text-gray-500">
+  //             {JSON.stringify(args)}
+  //           </div>
+  //           {/* <button onClick={() => {
+  //             respond?.("Data rendered successfully. Provide summary of the investments by not making any tool calls")
+  //           }}>
+  //             Accept
+  //           </button>     
+  //           <button onClick={() => {
+  //             respond?.("Data rendered rejected. Just give a summary of the rejected investments by not making any tool calls")
+  //           }}>
+  //             Reject
+  //           </button> */}
+  //         </div>
+  //       </>
+  //     )
+  //   }
+  // })
+
+  // useCoAgentStateRender({
+  //   name: "langgraphAgent",
+  //   render: ({state}) => <ToolLogs logs={state.tool_logs} />
+  // })
+
+
+  useCopilotAction({
+    name: "changeBackgroundColour",
+    description: "This is an action to change the background colour of the canvas.",
+    render: (args: any) => {
+      // console.log(args, "argsargsargsargsargsaaa")
+      useEffect(() => {
+        console.log(args, "argsargsargsargsargsaaa")
+      }, [args])
+      return (
+        <>
+          <div className="flex flex-col gap-4">
+            <div className="text-sm text-gray-500">
+              {JSON.stringify(args)}
+            </div>
+          </div>
+        </>
+      )
+    }
   })
 
   useCopilotAction({
