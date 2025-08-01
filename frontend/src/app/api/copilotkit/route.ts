@@ -7,7 +7,7 @@ import { NextRequest } from 'next/server';
 import { HttpAgent } from "@ag-ui/client";
 
 const agnoAgent = new HttpAgent({
-  url: "http://0.0.0.0:8000/agno-agent",
+  url: process.env.NEXT_PUBLIC_AGNO_URL || "http://0.0.0.0:8000/agno-agent",
 });
 const serviceAdapter = new OpenAIAdapter()
 const runtime = new CopilotRuntime({
