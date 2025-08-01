@@ -37,17 +37,17 @@ export function PromptPanel({ availableCash }: PromptPanelProps) {
             </div>
           </div>
         </div>
-        <p className="text-xs text-[#575758]">Interact with the LangGraph-powered AI agent for portfolio visualization and analysis</p>
+        <p className="text-xs text-[#575758]">Interact with the Agno-powered AI agent for portfolio visualization and analysis</p>
 
         {/* Available Cash Display */}
-        <div className="mt-3 p-2 bg-[#86ECE4]/10 rounded-lg">
+        <div className="mt-3 p-2 bg-[#3B82F6]/10 rounded-lg">
           <div className="text-xs text-[#575758] font-medium">Available Cash</div>
           <div className="text-sm font-semibold text-[#030507] font-['Roobert']">{formatCurrency(availableCash)}</div>
         </div>
       </div>
       <CopilotChat className="h-[78vh] p-2" labels={
         {
-          initial : `I am a LangGraph AI agent designed to analyze investment opportunities and track stock performance over time. How can I help you with your investment query? For example, you can ask me to analyze a stock like "Invest in Apple with 10k dollars since Jan 2023". \n\nNote: The AI agent has access to stock data from the past 4 years only`
+          initial : `I am a Agno AI agent designed to analyze investment opportunities and track stock performance over time. How can I help you with your investment query? For example, you can ask me to analyze a stock like "Invest in Apple with 10k dollars since Jan 2023". \n\nNote: The AI agent has access to stock data from the past 4 years only`
         }
       } />
 

@@ -56,7 +56,7 @@ export function CashPanel({ totalCash, investedAmount, currentPortfolioValue, on
       <div className="flex items-center gap-6">
         {/* Total Cash */}
         <div className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-[#86ECE4] rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#3B82F6] rounded-full flex items-center justify-center">
             <Wallet size={16} className="text-[#030507]" />
           </div>
           <div>
@@ -123,7 +123,7 @@ export function CashPanel({ totalCash, investedAmount, currentPortfolioValue, on
         <div className="flex items-center gap-2">
           <div
             className={`w-8 h-8 rounded-full flex items-center justify-center ${
-              fourYearReturn >= 0 ? "bg-[#86ECE4]" : "bg-red-100"
+              fourYearReturn >= 0 ? "bg-[#3B82F6]" : "bg-red-100"
             }`}
           >
             <Calendar size={16} className={fourYearReturn >= 0 ? "text-[#030507]" : "text-red-600"} />
@@ -173,7 +173,7 @@ export function CashPanel({ totalCash, investedAmount, currentPortfolioValue, on
         </div>
         <div className="w-20 h-2 bg-[#E8E8EF] rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-[#86ECE4] to-[#BEC9FF] transition-all duration-300"
+            className="h-full bg-gradient-to-r from-[#3B82F6] to-[#BEC9FF] transition-all duration-300"
             style={{ width: `${Math.min(investedPercentage, 100)}%` }}
           />
         </div>
